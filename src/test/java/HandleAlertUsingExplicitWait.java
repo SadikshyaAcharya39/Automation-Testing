@@ -20,12 +20,27 @@ public class HandleAlertUsingExplicitWait {
         driver.manage().window().maximize();
 
 
-        driver.findElement(By.xpath("//button[normalize-space()='Click for JS Alert']")).click();
+        // 1st condition
+
+//        driver.findElement(By.xpath("//button[normalize-space()='Click for JS Alert']")).click();
+//        Alert myAlert = wait.until(ExpectedConditions.alertIsPresent());
+//        System.out.println(myAlert.getText());
+//        myAlert.accept();
+
+
+        // 2nd Condition
+
+//        driver.findElement(By.xpath("//button[normalize-space()='Click for JS Confirm']")).click();
+//        Alert myAlert = wait.until(ExpectedConditions.alertIsPresent());
+//        myAlert.accept();
+//        myAlert.dismiss();
+
+        // 3rd Condition
+
+        driver.findElement(By.xpath("//button[normalize-space()='Click for JS Prompt']")).click();
         Alert myAlert = wait.until(ExpectedConditions.alertIsPresent());
-        System.out.println(myAlert.getText());
+        myAlert.sendKeys("Welcome");
         myAlert.accept();
-
-
     }
 
 }
